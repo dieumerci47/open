@@ -1,0 +1,36 @@
+## OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.bak
+
+## Logs
+*.log
+logs/
+
+## PHP dependencies
+vendor/
+composer.phar
+
+## Environment / secrets
+.env
+.env.*
+!.env.example
+*.local.php
+
+## Caches / runtime
+cache/
+tmp/
+*.cache
+*.pid
+
+## Build artifacts
+node_modules/
+dist/
+build/
+
+## Uploaded/generated files (keep folder with .gitkeep if needed)
+uploads/*
+!uploads/.gitkeep
