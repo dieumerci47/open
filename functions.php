@@ -30,4 +30,10 @@ function displayAuthor(string $authorEmail, array $users)
             return $user['full_name'] . '(' . $user['age'] . ' ans)';
         };
     };
-} ?>
+}
+function redirectToUrl(string $url): never
+{
+    header("Location: {$url}");
+    exit();
+}
+?>

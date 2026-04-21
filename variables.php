@@ -1,43 +1,13 @@
 <?php
-$recipes = [
-    [
-        'title' => 'Cassoulet',
-        'recipe' => 'Etape 1 : des flageolets !',
-        'author' => 'mickael.andrieu@exemple.com',
-        'is_enabled' => true,
-    ],
-    [
-        'title' => 'Couscous',
-        'recipe' => 'Etape 1 : de la semoule',
-        'author' => 'mickael.andrieu@exemple.com',
-        'is_enabled' => false,
-    ],
-    [
-        'title' => 'Escalope milanaise',
-        'recipe' => 'Etape 1 : prenez une belle escalope',
-        'author' => 'mathieu.nebra@exemple.com',
-        'is_enabled' => true,
-    ],
-]; ?>
-<?php
+require_once(__DIR__ . "/config/databaseconnect.php");
+$sqlQuerys = "SELECT*FROM users ";
+// echo $_SESSION['CONN'];
+$loginStatement = $mysqlClient->prepare($sqlQuerys);
+$loginStatement->execute();
+$users = $loginStatement->fetchAll();
 
-$users = [
-    [
-        'full_name' => 'Mickaël Andrieu',
-        'email' => 'mickael.andrieu@exemple.com',
-        'age' => 34,
-        'password' => 'devine',
-    ],
-    [
-        'full_name' => 'Mathieu Nebra',
-        'email' => 'mathieu.nebra@exemple.com',
-        'age' => 34,
-        'password' => 'MiamMiam',
-    ],
-    [
-        'full_name' => 'Laurène Castor',
-        'email' => 'laurene.castor@exemple.com',
-        'age' => 28,
-        'password' => 'laCasto28',
-    ],
-]; ?>
+$sqlQuery = "SELECT * FROM recipes WHERE is_enabled=true";
+// $recipeStatement = $mysqlClient->prepare($sqlQuery);
+$recipeStatement = $mysqlClient->prepare($sqlQuery);
+$recipeStatement->execute();
+$recipes = $recipeStatement->fetchAll();

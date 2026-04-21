@@ -84,7 +84,7 @@ if (isset($fileData['screenshot']) && $fileData['screenshot']['error'] == 0) {
                 <p class="card-text"><b>Email</b> : <?php echo (strip_tags($postData['email'])); ?></p>
                 <p class="card-text"><b>Message</b> : <?php echo (htmlspecialchars($postData['message'])); ?></p>
                 <?php if ($nameFile !== null): ?>
-                <img class="card-img" src="./uploads/<?php echo htmlspecialchars($nameFile, ENT_QUOTES, 'UTF-8'); ?>" alt="Capture d'écran jointe" height="350">
+                    <img class="card-img" src="./uploads/<?php echo htmlspecialchars($nameFile, ENT_QUOTES, 'UTF-8'); ?>" alt="Capture d'écran jointe" height="350">
                 <?php endif; ?>
             </div>
         </div>
